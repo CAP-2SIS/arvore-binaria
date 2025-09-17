@@ -17,6 +17,9 @@ public class MenuAbb {
             System.out.println("3 - Conta nos da ABB");
             System.out.println("4 - Consulta valor");
             System.out.println("5 - Conta Consulta");
+            System.out.println("6 - Remocao");
+            System.out.println("7 - Maximo");
+            System.out.println("8 - Minimo");
             System.out.print("Opcao: ");
             opcao = le.nextInt();
             switch (opcao) {
@@ -40,12 +43,24 @@ public class MenuAbb {
                     System.out.println("Qual o valor?");
                     valor = le.nextInt();
                     System.out.println("Tem o numero? " + abb.consulta(abb.root, valor));
-					break;
-				case 5:
-					System.out.println("Qual o valor?");
-					valor = le.nextInt();
-					System.out.println("Quantas consultas? " + abb.contaConsulta(abb.root, valor, 0));
-					break;
+                    break;
+                case 5:
+                    System.out.println("Qual o valor?");
+                    valor = le.nextInt();
+                    System.out.println("Quantas consultas? " + abb.contaConsulta(abb.root, valor, 0));
+                    break;
+                case 6:
+                    System.out.println("Qual o valor?");
+                    valor = le.nextInt();
+                    abb.root = abb.remover(abb.root, valor);
+                    System.out.println("Valor removido.");
+                    break;
+                case 7:
+                    System.out.println("Valor maximo " + abb.maximo(abb.root));
+                    break;
+                case 8:
+                    System.out.println("Valor minimo " + abb.minimo(abb.root));
+                    break;
                 default:
                     System.out.println("Opcao invalida");
             }
